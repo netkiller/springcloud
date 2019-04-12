@@ -6,7 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-	@GetMapping("/test/user/me")
+	@GetMapping("/")
+	public Principal index(Principal principal) {
+		return principal;
+	}
+
+	@GetMapping("/user")
 	public Principal user(Principal principal) {
 		return principal;
 	}

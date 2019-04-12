@@ -51,6 +51,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<docker.image.prefix>netkiller</docker.image.prefix>
 	</properties>
 
 	<parent>
@@ -108,6 +109,8 @@
 		<module>webflux</module>
 		<module>oauth2-authorization_code</module>
 		<module>oauth2-client</module>
+		<module>oauth2-simple</module>
+		<module>docker</module>
 	</modules>
 
 	<build>

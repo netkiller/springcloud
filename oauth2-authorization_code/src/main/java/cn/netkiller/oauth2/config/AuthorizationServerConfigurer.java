@@ -33,17 +33,20 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		String secret = passwordEncoder.encode("secret");
 
-		clients.inMemory().withClient("sso").secret(secret) // 认证
+		clients.inMemory()
+				// 配置验证码模式
+				.withClient("sso").secret(secret) // 认证
 				.authorizedGrantTypes("authorization_code") // 允许验证码授权类型
-				.scopes("app") // 允许的授权范围
+				.scopes("read") // 允许的授权范围
 				.autoApprove(true) // 自动接受
-				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8082/");
+				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8082/callback");
 	}
 
-	@Override
-	public void configure(final AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-	}
+	// @Override
+	// public void configure(final AuthorizationServerSecurityConfigurer security) throws Exception {
+	// super.configure(security);
+	// security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
+	// }
 
 	@Override
 	public void configure(final AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
