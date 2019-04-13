@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.domain.Member;
-import common.pojo.ResponseRestful;
-import common.repository.MemberRepository;
-import common.service.MemberService;
+import cn.netkiller.common.domain.Member;
+import cn.netkiller.common.pojo.ResponseRestful;
+import cn.netkiller.common.repository.MemberRepository;
+import cn.netkiller.common.service.MemberService;
 
 @RestController
 @RequestMapping("/member")

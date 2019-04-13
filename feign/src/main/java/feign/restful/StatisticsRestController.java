@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.pojo.ResponseRestful;
-import common.domain.StatisticsHistory;
-import common.feign.Statistics;
+import cn.netkiller.common.domain.StatisticsHistory;
+import cn.netkiller.common.feign.Statistics;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 @RestController
 @RequestMapping("/article/statistics")

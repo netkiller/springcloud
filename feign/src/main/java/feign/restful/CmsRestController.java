@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.feign.Cms;
-import common.model.Comment;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.feign.Cms;
+import cn.netkiller.common.model.Comment;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 @RestController
 @RequestMapping("/cms")

@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.service.ArticleService;
-import common.domain.Article;
-import common.domain.Comment;
-import common.domain.RecentRead;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.domain.Article;
+import cn.netkiller.common.domain.Comment;
+import cn.netkiller.common.domain.RecentRead;
+import cn.netkiller.common.pojo.ResponseRestful;
+import cn.netkiller.common.service.ArticleService;
 
 @RestController
 @RequestMapping("/article")

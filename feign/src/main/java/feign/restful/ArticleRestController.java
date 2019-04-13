@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.domain.Favorites;
-import common.feign.ArticleFeignClient;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.domain.Favorites;
+import cn.netkiller.common.feign.ArticleFeignClient;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 @RestController
 @RequestMapping("/article")

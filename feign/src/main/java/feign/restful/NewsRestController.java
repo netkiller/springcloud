@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.feign.News;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.feign.News;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 import java.util.Date;
 

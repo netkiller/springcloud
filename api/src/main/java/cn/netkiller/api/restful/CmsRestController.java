@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.service.CmsService;
-import common.domain.CmsTrash;
-import common.model.Comment;
-import common.model.Tag;
-import common.pojo.ResponseRestful;
-import common.repository.CmsTrashRepository;
+import cn.netkiller.common.domain.CmsTrash;
+import cn.netkiller.common.model.Comment;
+import cn.netkiller.common.model.Tag;
+import cn.netkiller.common.pojo.ResponseRestful;
+import cn.netkiller.common.repository.CmsTrashRepository;
+import cn.netkiller.common.service.CmsService;
 
 @RestController
 @RequestMapping("/cms")

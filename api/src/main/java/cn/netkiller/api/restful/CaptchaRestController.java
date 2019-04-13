@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.pojo.ResponseRestful;
-import common.service.AccessControlList;
-//import com.qcloud.sms.SmsSingleSender;
-//import com.qcloud.sms.SmsSingleSenderResult;
+import cn.netkiller.common.pojo.ResponseRestful;
+import cn.netkiller.common.service.AccessControlList;
 
 @RestController
 @RequestMapping("/captcha")

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.domain.ItemPool;
-import common.repository.ItemPoolRepository;
+import cn.netkiller.common.domain.ItemPool;
+import cn.netkiller.common.repository.ItemPoolRepository;
 
 @RestController
 public class TestRestController {

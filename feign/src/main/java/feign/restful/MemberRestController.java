@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.domain.Member;
-import common.feign.MemberFeignClient;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.domain.Member;
+import cn.netkiller.common.feign.MemberFeignClient;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 @RestController
 public class MemberRestController {

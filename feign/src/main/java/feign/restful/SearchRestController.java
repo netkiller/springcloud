@@ -3,8 +3,8 @@ package feign.restful;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import common.feign.Search;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.feign.Search;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 import java.util.List;
 

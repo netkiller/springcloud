@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import common.feign.Captcha;
-import common.pojo.ResponseRestful;
+import cn.netkiller.common.feign.Captcha;
+import cn.netkiller.common.pojo.ResponseRestful;
 
 @RestController
 @RequestMapping("/captcha")
