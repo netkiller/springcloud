@@ -1,30 +1,32 @@
-server:
-    port: 8082
-#    servlet:
-#        context-path: 
-
-security:
-  oauth2:
-    sso:
-      loginPath: /login
-    client:
-      clientId: sso
-      clientSecret: secret
-      authorizedGrantTypes: authorization_code
-      scope: app
-      accessTokenUri: http://localhost:8080/oauth/token
-      userAuthorizationUri: http://localhost:8080/oauth/authorize
-    resource:
-      userInfoUri: http://localhost:8080/user
-      preferTokenInfo: false
-    authorization:
-      check-token-access: http://localhost:8080/oauth/check_token
-
 spring:
-  thymeleaf:
-    cache: false
-
-logging:
-  level:
-    org.springframework.web: DEBUG
-    org.springframework.security: DEBUG        
+  security:
+    oauth2:
+      client:
+        registration:
+          github-client-1:
+            client-id: ${APP-CLIENT-ID}
+            client-secret: ${APP-CLIENT-SECRET}
+            client-name: Github user
+            provider: github
+            scope: user
+            redirect-uri: http://localhost:8080/login/oauth2/code/github
+          github-client-2:
+            client-id: ${APP-CLIENT-ID}
+            client-secret: ${APP-CLIENT-SECRET}
+            client-name: Github email
+            provider: github
+            scope: user:email
+            redirect-uri: http://localhost:8080/login/oauth2/code/github
+          yahoo-oidc:
+            client-id: ${YAHOO-CLIENT-ID}
+            client-secret: ${YAHOO-CLIENT-SECRET}
+          github-repos:
+            client-id: ${APP-CLIENT-ID}
+            client-secret: ${APP-CLIENT-SECRET}
+            scope: public_repo
+            redirect-uri: "{baseUrl}/github-repos"
+            provider: github
+            client-name: GitHub Repositories
+        provider:
+          yahoo-oidc:
+            issuer-uri: https://api.login.yahoo.com

@@ -1,4 +1,4 @@
-package cn.netkiller.oauth2.client;
+package cn.netkiller.oauth2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;

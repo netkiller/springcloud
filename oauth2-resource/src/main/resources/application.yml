@@ -1,0 +1,30 @@
+server:
+    port: 8082
+#    servlet:
+#        context-path: 
+
+security:
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      clientId: sso
+      clientSecret: secret
+      authorizedGrantTypes: authorization_code
+      scope: app
+      accessTokenUri: http://localhost:8080/oauth/token
+      userAuthorizationUri: http://localhost:8080/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8080/user
+      preferTokenInfo: false
+    authorization:
+      check-token-access: http://localhost:8080/oauth/check_token
+
+spring:
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG        

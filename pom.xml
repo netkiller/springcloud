@@ -113,6 +113,8 @@
 		<module>docker</module>
     <module>neo4j</module>
     <module>oauth2-jdbc</module>
+    <module>swagger2</module>
+    <module>oauth2-resource</module>
   </modules>
 
 	<build>
