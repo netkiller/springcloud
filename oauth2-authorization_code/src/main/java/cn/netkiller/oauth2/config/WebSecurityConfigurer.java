@@ -20,12 +20,18 @@ import cn.netkiller.oauth2.service.OauthUserDetailsService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+// @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private OauthUserDetailsService userDetailsFitService;
 
-	@Override
 	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+	}
+
+	@Bean
+	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
@@ -33,7 +39,8 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// http.csrf().disable().authorizeRequests().antMatchers("/", "/oauth/**", "/login", "/user", "/health").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll();
-		http.requestMatchers().antMatchers("/user").and().authorizeRequests().anyRequest().access("#oauth2.hasScope('read')").and().anonymous().disable();
+		http.csrf().disable().authorizeRequests().antMatchers("/", "/oauth/**", "/login", "/login/**", "/user", "/health").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").failureUrl("/login-error").permitAll();
+		// http.authorizeRequests().antMatchers("/**").permitAll();
 
 	}
 
@@ -48,8 +55,4 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 		auth.parentAuthenticationManager(authenticationManagerBean());
 	}
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-	}
 }

@@ -1,6 +1,7 @@
 package cn.netkiller.oauth2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +24,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	@Autowired
 	private OauthUserDetailsService userDetailsService;
 
-	@Autowired
+	// @Autowired
 	// private RedisConnectionFactory connectionFactory;
 
 	@Override
@@ -39,14 +40,14 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 				.authorizedGrantTypes("authorization_code") // 允许验证码授权类型
 				.scopes("read") // 允许的授权范围
 				.autoApprove(true) // 自动接受
-				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8082/callback");
+				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8082/callback", "http://localhost:8085/login/oauth2/code/netkiller");
 	}
 
-	// @Override
-	// public void configure(final AuthorizationServerSecurityConfigurer security) throws Exception {
-	// super.configure(security);
-	// security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-	// }
+	@Override
+	public void configure(final AuthorizationServerSecurityConfigurer security) throws Exception {
+		// super.configure(security);
+		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()").allowFormAuthenticationForClients();
+	}
 
 	@Override
 	public void configure(final AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
