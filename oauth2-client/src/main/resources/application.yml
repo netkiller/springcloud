@@ -1,8 +1,16 @@
+APP-CLIENT-ID: 180579ba67875ffc18e3
+APP-CLIENT-SECRET: 8175af8f569197d8c1e3499e15a0e2f3b6007b95
 spring:
   security:
     oauth2:
       client:
         registration:
+          github:
+            client-id: ${APP-CLIENT-ID}
+            client-secret: ${APP-CLIENT-SECRET}
+            client-name: Github User
+            provider: github
+            scope: user
           github-client-1:
             client-id: ${APP-CLIENT-ID}
             client-secret: ${APP-CLIENT-SECRET}

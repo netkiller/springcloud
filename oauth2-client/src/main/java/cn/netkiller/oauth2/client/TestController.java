@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 	@RequestMapping("/")
-	public String email(Principal principal) {
-		return "Hello " + principal.getName();
+	public Principal email(Principal principal) {
+		System.out.println("Hello " + principal.getName());
+		return principal;
 	}
 }
