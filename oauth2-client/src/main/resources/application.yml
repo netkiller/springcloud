@@ -46,7 +46,7 @@ spring:
           yahoo-oidc:
             issuer-uri: https://api.login.yahoo.com
         registration:
-          test:
+          netkiller:
             client-id: sso
             client-secret: secret
             client-name: Neo
@@ -82,6 +82,6 @@ spring:
             
 logging:
   level:
-    org.springframework.web: DEBUG
+#    org.springframework.web: DEBUG
     org.springframework.security: DEBUG             
           
