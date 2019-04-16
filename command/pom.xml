@@ -9,7 +9,7 @@
 	<groupId>cn.netkiller</groupId>
 	<artifactId>command</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>backend</name>
+	<name>Command Line</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
