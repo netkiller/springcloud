@@ -115,6 +115,8 @@
     <module>oauth2-jdbc</module>
     <module>swagger2</module>
     <module>oauth2-resource</module>
+    <module>oauth2-jwt-authorization</module>
+    <module>oauth2-jwt-resource</module>
   </modules>
 
 	<build>
