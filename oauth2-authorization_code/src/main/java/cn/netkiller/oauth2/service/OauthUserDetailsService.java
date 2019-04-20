@@ -27,7 +27,7 @@ public class OauthUserDetailsService implements UserDetailsService {
 		Collection<GrantedAuthority> authorities = new HashSet<>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		String password = passwordEncoder.encode("123456");
+		String password = passwordEncoder.encode("chen");
 		User user = new User("admin", password, authorities);
 		return user;
 	}

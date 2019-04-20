@@ -1,4 +1,4 @@
-package cn.netkiller.ipo.test;
+package cn.netkiller.test;
 
 import cn.netkiller.ipo.Input;
 import cn.netkiller.ipo.InputProcessOutputMatchChain;

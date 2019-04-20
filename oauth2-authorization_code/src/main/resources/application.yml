@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: 8085
 
 spring:
   application:
     name: oauth2-server   # 应用名称
-  redis:
-    host: localhost
+#  redis:
+#    host: localhost
   thymeleaf:
         prefix: classpath:/templates/
 

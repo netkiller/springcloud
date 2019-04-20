@@ -14,7 +14,7 @@ public class TestController {
 	private ClientRegistrationRepository clientRegistrationRepository;
 
 	@RequestMapping("/")
-	public Principal email(Principal principal) {
+	public Principal home(Principal principal) {
 		System.out.println("Hello " + principal.getName());
 
 		return principal;

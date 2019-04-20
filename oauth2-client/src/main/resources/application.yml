@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 8080
 
 APP-CLIENT-ID: 180579ba67875ffc18e3
 APP-CLIENT-SECRET: 8175af8f569197d8c1e3499e15a0e2f3b6007b95
@@ -31,16 +31,16 @@ APP-CLIENT-SECRET: 8175af8f569197d8c1e3499e15a0e2f3b6007b95
 
 
 spring:
-  redis:
-    host: localhost
+#  redis:
+#    host: localhost
   security:
     oauth2:
       client:
         provider:
           netkiller:
-            authorization-uri: http://localhost:8080/oauth/authorize
-            token-uri: http://localhost:8080/oauth/token
-            user-info-uri: http://localhost:8080/user
+            authorization-uri: http://localhost:8085/oauth/authorize
+            token-uri: http://localhost:8085/oauth/token
+            user-info-uri: http://localhost:8085/user
             user-name-attribute: name
 #            token-endpoint-url: http://localhost:8080/oauth/check_token
           yahoo-oidc:
@@ -53,21 +53,21 @@ spring:
             provider: netkiller
             scope: read
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8085/login/oauth2/code/netkiller
+            redirect-uri: http://localhost:${server.port}/login/oauth2/code/netkiller
           github-client-1:
             client-id: ${APP-CLIENT-ID}
             client-secret: ${APP-CLIENT-SECRET}
             client-name: Github user
             provider: github
             scope: user
-            redirect-uri: http://localhost:8085/login/oauth2/code/github
+            redirect-uri: http://localhost:${server.port}/login/oauth2/code/github
           github-client-2:
             client-id: ${APP-CLIENT-ID}
             client-secret: ${APP-CLIENT-SECRET}
             client-name: Github email
             provider: github
             scope: user:email
-            redirect-uri: http://localhost:8080/login/oauth2/code/github
+            redirect-uri: http://localhost:${server.port}/login/oauth2/code/github
           yahoo-oidc:
             client-id: ${YAHOO-CLIENT-ID}
             client-secret: ${YAHOO-CLIENT-SECRET}

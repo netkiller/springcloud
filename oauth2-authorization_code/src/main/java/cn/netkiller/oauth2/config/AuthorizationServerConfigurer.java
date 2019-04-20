@@ -3,7 +3,7 @@ package cn.netkiller.oauth2.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
+//import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -27,8 +27,8 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	@Autowired
 	private OauthUserDetailsService userDetailsService;
 
-	@Autowired
-	private RedisConnectionFactory connectionFactory;
+//	@Autowired
+//	private RedisConnectionFactory connectionFactory;
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -43,7 +43,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 				.authorizedGrantTypes("authorization_code") // 允许验证码授权类型
 				.scopes("read") // 允许的授权范围
 				.autoApprove(true) // 自动接受
-				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8085/login/oauth2/code/netkiller");
+				.redirectUris("http://www.netkiller.cn", "http://www.example.com", "http://localhost:8080/login/oauth2/code/netkiller");
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	@Override
 	public void configure(final AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		endpoints.authenticationManager(authenticationManager).userDetailsService(userDetailsService).allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
-		endpoints.tokenStore(tokenStore());
+//		endpoints.tokenStore(tokenStore());
 	}
 
 	// @Override
@@ -63,9 +63,9 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	// endpoints.tokenStore(tokenStore());
 	// }
 
-	@Bean
-	public TokenStore tokenStore() {
-		return new RedisTokenStore(connectionFactory);
-	}
+//	@Bean
+//	public TokenStore tokenStore() {
+//		return new RedisTokenStore(connectionFactory);
+//	}
 
 }
