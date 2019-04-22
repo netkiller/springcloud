@@ -6,9 +6,9 @@
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>cn.netkiller</groupId>
+	<!-- <groupId>cn.netkiller</groupId> -->
 	<artifactId>oauth2-jdbc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<!-- <version>0.0.1-SNAPSHOT</version> -->
 	<name>oauth2-jdbc</name>
 	<url>http://maven.apache.org</url>
 	<properties>

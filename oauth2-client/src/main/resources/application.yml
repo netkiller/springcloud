@@ -31,8 +31,8 @@ APP-CLIENT-SECRET: 8175af8f569197d8c1e3499e15a0e2f3b6007b95
 
 
 spring:
-#  redis:
-#    host: localhost
+  redis:
+    host: localhost
   security:
     oauth2:
       client:
@@ -41,8 +41,9 @@ spring:
             authorization-uri: http://localhost:8085/oauth/authorize
             token-uri: http://localhost:8085/oauth/token
             user-info-uri: http://localhost:8085/user
-            user-name-attribute: name
-#            token-endpoint-url: http://localhost:8080/oauth/check_token
+            user-name-attribute: username
+            jwk-set-uri: http://localhost:8085/oauth/token_key    
+              
           yahoo-oidc:
             issuer-uri: https://api.login.yahoo.com
         registration:
@@ -54,6 +55,15 @@ spring:
             scope: read
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:${server.port}/login/oauth2/code/netkiller
+            
+#          netkiller-1:
+#            client-id: api
+#            client-secret: secret
+#            client-name: Neo Jwt
+#            provider: netkiller
+#            scope: read
+#            authorization-grant-type: authorization_code
+#            redirect-uri: http://localhost:${server.port}/login/oauth2/code/netkiller
           github-client-1:
             client-id: ${APP-CLIENT-ID}
             client-secret: ${APP-CLIENT-SECRET}
