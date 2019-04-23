@@ -1,5 +1,7 @@
 package cn.netkiller.component;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class ETL implements ApplicationRunner {
 	@Qualifier("masterJdbcTemplate")
 	@Autowired
 	private JdbcTemplate masterJdbcTemplate;
-	
+
 	@Qualifier("slaveJdbcTemplate")
 	@Autowired
 	private JdbcTemplate slaveJdbcTemplate;
@@ -43,8 +45,20 @@ public class ETL implements ApplicationRunner {
 		// System.out.println(resultSet.getLong(1)+","+ resultSet.getString(2)+","+ resultSet.getString(3));
 		// });
 
-		String master = jdbcTemplate.queryForObject("select name from test limit 1", String.class);
+		// String jdbc = jdbcTemplate.queryForObject("select name from saas.tbl_eos_contracts limit 1", String.class);
+		// logger.warn(jdbc);
+
+		var rows = jdbcTemplate.queryForList("select * from saas.tbl_eos_contracts");
+		for (Map<String, Object> row : rows) {
+
+			// tag.setId((Integer) row.get("id"));
+			// tag.setName((String) row.get("name"));
+			logger.warn(row.toString());
+		}
+
+		String master = masterJdbcTemplate.queryForObject("select name from test limit 1", String.class);
 		logger.warn(master);
+
 		String slave = slaveJdbcTemplate.queryForObject("select name from test limit 1", String.class);
 		logger.warn(slave);
 

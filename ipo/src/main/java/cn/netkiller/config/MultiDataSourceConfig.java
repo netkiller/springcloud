@@ -15,38 +15,58 @@ public class MultiDataSourceConfig {
 
 	@Bean
 	@Primary
+	@ConfigurationProperties("spring.datasource")
+	public DataSourceProperties defaultDataSourceProperties() {
+		return new DataSourceProperties();
+	}
+
+	@Bean
+	@Primary
+	@ConfigurationProperties("spring.datasource")
+	public DataSource defaultDataSource() {
+		return defaultDataSourceProperties().initializeDataSourceBuilder().build();
+	}
+
+	@Bean("JdbcTemplate")
+	@Primary
+	public JdbcTemplate defaultJdbcTemplate(@Qualifier("defaultDataSource") DataSource Master) {
+		return new JdbcTemplate(Master);
+	}
+
+	@Bean
+	// @Primary
 	@ConfigurationProperties("spring.datasource.master")
-	public DataSourceProperties firstDataSourceProperties() {
+	public DataSourceProperties masterDataSourceProperties() {
 		return new DataSourceProperties();
 	}
 
 	@Bean("Master")
-	@Primary
+	// @Primary
 	@ConfigurationProperties("spring.datasource.master")
-	public DataSource firstDataSource() {
-		return firstDataSourceProperties().initializeDataSourceBuilder().build();
+	public DataSource masterDataSource() {
+		return masterDataSourceProperties().initializeDataSourceBuilder().build();
+	}
+
+	@Bean("masterJdbcTemplate")
+	// @Primary
+	public JdbcTemplate masterJdbcTemplate(@Qualifier("Master") DataSource Master) {
+		return new JdbcTemplate(Master);
 	}
 
 	@Bean
 	@ConfigurationProperties("spring.datasource.slave")
-	public DataSourceProperties secondDataSourceProperties() {
+	public DataSourceProperties slaveDataSourceProperties() {
 		return new DataSourceProperties();
 	}
 
 	@Bean(name = "Slave")
 	@ConfigurationProperties("spring.datasource.slave")
-	public DataSource secondDataSource() {
-		return secondDataSourceProperties().initializeDataSourceBuilder().build();
-	}
-
-	@Bean("masterJdbcTemplate")
-	@Primary
-	public JdbcTemplate primaryJdbcTemplate(@Qualifier("Master") DataSource Master) {
-		return new JdbcTemplate(Master);
+	public DataSource slaveDataSource() {
+		return slaveDataSourceProperties().initializeDataSourceBuilder().build();
 	}
 
 	@Bean("slaveJdbcTemplate")
-	public JdbcTemplate secondJdbcTemplate(@Qualifier("Slave") DataSource Master) {
+	public JdbcTemplate slaveJdbcTemplate(@Qualifier("Slave") DataSource Master) {
 		return new JdbcTemplate(Master);
 	}
 
