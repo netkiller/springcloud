@@ -58,7 +58,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.4.RELEASE</version>
-		<relativePath />
+		<relativePath/>
 	</parent>
 
 	<dependencyManagement>
@@ -117,7 +117,9 @@
 		<module>oauth2-resource</module>
 		<module>oauth2-jwt-authorization</module>
 		<module>oauth2-jwt-resource</module>
-	</modules>
+    <module>etl</module>
+    <module>datasource</module>
+  </modules>
 
 	<build>
 		<plugins>
