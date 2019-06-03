@@ -12,11 +12,11 @@ public class Application {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 
-		FileInput fi = new FileInput("/tmp/adobegc.log");
+		// FileInput fi = ;
 		// System.out.print(fi.readLine());
 
 		Input input = new Input();
-		input.add(fi);
+		input.add(new FileInput("/tmp/adobegc.log"));
 		// input.read();
 
 		Output output = new Output();
