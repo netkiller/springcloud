@@ -57,8 +57,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.6.RELEASE</version>
-		<relativePath/>
+		<version>2.1.9.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<dependencyManagement>
@@ -100,7 +100,7 @@
 		<module>eureka</module>
 		<module>zuul</module>
 		<module>api</module>
-		<module>backend</module>
+
 		<module>wallet</module>
 		<module>doc</module>
 		<module>oauth2</module>
@@ -123,11 +123,11 @@
 		<module>oauth2-jwt-resource</module>
 		<module>etl</module>
 		<module>datasource</module>
-    <module>spring-boot-starter</module>
-    <module>thymeleaf</module>
-    <module>spring-boot-starter-log-test</module>
-    <module>aop</module>
-  </modules>
+		<module>spring-boot-starter</module>
+		<module>thymeleaf</module>
+		<module>spring-boot-starter-log-test</module>
+		<module>aop</module>
+	</modules>
 
 	<build>
 		<plugins>
