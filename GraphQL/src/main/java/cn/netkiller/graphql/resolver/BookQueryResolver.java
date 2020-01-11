@@ -18,17 +18,17 @@ public class BookQueryResolver implements GraphQLQueryProvider {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public Collection<GraphQLFieldDefinition> getQueries() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public List<Book> findBooks() {
 		Author author = Author.builder().id(1).name("Neo Chen").age(40).build();
 		Book b = Book.builder().id(1).name("Netkiller SpringCloud 手札").author(author).publisher("http://www.netkiller.cn").build();
 		List<Book> bookList = new ArrayList<Book>();
 		bookList.add(b);
 		return bookList;
+	}
+
+	@Override
+	public Collection<GraphQLFieldDefinition> getQueries() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
