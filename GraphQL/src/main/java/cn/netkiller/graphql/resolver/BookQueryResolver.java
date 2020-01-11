@@ -1,4 +1,4 @@
-package cn.netkiller.graphql;
+package cn.netkiller.graphql.resolver;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import cn.netkiller.graphql.domain.Author;
 import cn.netkiller.graphql.domain.Book;
 import graphql.schema.GraphQLFieldDefinition;
-import graphql.servlet.GraphQLQueryProvider;
+import graphql.servlet.osgi.GraphQLQueryProvider;
 
 @Component
 public class BookQueryResolver implements GraphQLQueryProvider {

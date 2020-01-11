@@ -11,9 +11,9 @@ public class Book {
 	private Author author;
 	private String publisher;
 
-	public Book() {
-		// TODO Auto-generated constructor stub
-	}
+	// public Book() {
+	// // TODO Auto-generated constructor stub
+	// }
 
 	@Override
 	public String toString() {

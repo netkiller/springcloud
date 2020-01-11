@@ -10,9 +10,9 @@ public class Author {
 	private String name;
 	private Integer age;
 
-	public Author() {
-		// TODO Auto-generated constructor stub
-	}
+	// public Author() {
+	// // TODO Auto-generated constructor stub
+	// }
 
 	@Override
 	public String toString() {
