@@ -1,3 +1,4 @@
+package cn.netkiller.web.restful;
 //package web.restful;
 //
 //import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package web.restful;
+package cn.netkiller.web.restful;
 
 import javax.validation.Valid;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import web.domain.User;
+import cn.netkiller.web.domain.User;
 
 @RestController
 @RequestMapping("/restful")

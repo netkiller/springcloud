@@ -1,9 +1,14 @@
-package web.domain;
+package cn.netkiller.web.domain;
+
+import java.util.Date;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import cn.netkiller.web.annotation.Mobile;
 
 public class User {
 
@@ -21,10 +26,17 @@ public class User {
 	@Email(message = "邮箱格式不正确")
 	private String email;
 
+	// 这里是新添加的注解奥
+	@Mobile(message = "手机号码格式错误！！！")
+	private String phone;
+
 	// 不允许为空，并且年龄的最小值为18
 	@NotNull
 	@Min(18)
 	private Integer age;
+
+	@Future
+	private Date createTime;
 
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -70,9 +82,17 @@ public class User {
 		this.age = age;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", age=" + age + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", phone=" + phone + ", age=" + age + "]";
 	}
 
 }
