@@ -129,6 +129,7 @@
 		<module>aop</module>
     <module>GraphQL</module>
     <module>elasticsearch</module>
+    <module>json</module>
   </modules>
 
 	<build>
