@@ -128,6 +128,7 @@
 		<module>spring-boot-starter-log-test</module>
 		<module>aop</module>
     <module>GraphQL</module>
+    <module>elasticsearch</module>
   </modules>
 
 	<build>
