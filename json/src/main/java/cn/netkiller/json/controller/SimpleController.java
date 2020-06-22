@@ -3,31 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cn.netkiller.controller;
+package cn.netkiller.json.controller;
 
-import cn.netkiller.persistence.repo.BookRepository;
+import cn.netkiller.json.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  *
- * @author gino
+ * @author neo
  */
-@Controller
+@RestController
 public class SimpleController {
 
-    @Value("${spring.application.name}")
-    String appName;
+	@Value("${spring.application.name}")
+	String appName;
 
-    @Autowired
-    BookRepository repo;
+	@Autowired
+	public ObjectMapper objectMapper;
 
-    @GetMapping("/")
-    public String homePage(Model model) {
-        model.addAttribute("appName", appName);
-        return "home";
-    }
+	@GetMapping("/")
+	public String home() throws JsonMappingException, JsonProcessingException {
+		String json = "{\"name\":\"netkiller\"}";
+		Member member = objectMapper.readValue(json, Member.class);
+		System.out.println(member.getName());
+		return member.getName();
+	}
+
+	@GetMapping("/test")
+	public String test() {
+		return "aaa";
+	}
 }
