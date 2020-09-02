@@ -50,15 +50,15 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.release>${java.version}</maven.compiler.release>
-		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
 		<docker.image.prefix>netkiller</docker.image.prefix>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.2.RELEASE</version>
-		<relativePath/>
+		<version>2.3.3.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<dependencyManagement>
@@ -127,12 +127,12 @@
 		<module>thymeleaf</module>
 		<module>spring-boot-starter-log-test</module>
 		<module>aop</module>
-    <module>GraphQL</module>
-    <module>elasticsearch</module>
-    <module>json</module>
-    <module>spring-boot-starter-customize</module>
-    <module>spring-boot-starter-customize-test</module>
-  </modules>
+		<module>GraphQL</module>
+		<module>elasticsearch</module>
+		<module>json</module>
+		<module>spring-boot-starter-customize</module>
+		<module>spring-boot-starter-customize-test</module>
+	</modules>
 
 	<build>
 		<plugins>
